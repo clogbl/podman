@@ -65,7 +65,8 @@ test: unit integration
 
 .PHONY: unit
 unit:
-	$(GO) test -v ./...
+	# Use -count=1 to disable test result caching
+	$(GO) test -v -count=1 ./...
 
 .PHONY: integration
 integration:
