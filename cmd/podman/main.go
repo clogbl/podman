@@ -39,6 +39,8 @@ func main() {
 		// needing --log-level=debug. Using %v (not %w) intentionally since
 		// we are only logging, not wrapping.
 		logrus.Errorf("%v", err)
+		// Print a newline after the error for better readability in the terminal.
+		os.Stderr.WriteString("\n")
 	}
 
 	os.Exit(registry.GetExitCode())
