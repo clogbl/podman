@@ -35,6 +35,9 @@ func main() {
 		if registry.GetExitCode() == 0 {
 			registry.SetExitCode(registry.ExecErrorCodeGeneric)
 		}
+		// Log at Error level so the message is visible by default without
+		// needing --log-level=debug. Using %v (not %w) intentionally since
+		// we are only logging, not wrapping.
 		logrus.Errorf("%v", err)
 	}
 
