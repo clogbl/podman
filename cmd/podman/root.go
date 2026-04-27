@@ -32,10 +32,11 @@ without requiring a daemon. Podman can run containers as root or in rootless mod
 
 func init() {
 	// Persistent flags are available to all subcommands.
+	// Changed default log-level from "warn" to "info" for more verbose output during personal use.
 	rootCmd.PersistentFlags().StringVar(
 		&logLevel,
 		"log-level",
-		"warn",
+		"info",
 		`Log messages above specified level (trace, debug, info, warn, error, fatal, panic)`,
 	)
 	rootCmd.PersistentFlags().StringVarP(
